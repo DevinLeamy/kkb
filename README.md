@@ -25,3 +25,8 @@ Describe your work of art.
 ```bash
 kkb "Hercules riding a motorcycle over a rainbow, with a jetpack"
 ```
+
+### Tech
+
+-   Image generation: [OpenAI's DALL-E 3](https://openai.com/dall-e-3)
+-   Image super resolution: [OpenCV](https://github.com/twistedfall/opencv-rust)
