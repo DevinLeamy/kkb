@@ -35,9 +35,9 @@ fn main() -> Result<()> {
     // let path = &format!("{ASSETS_PATH}/image-{prompt}.png");
     // image.save(path)?;
 
-    let path = &format!("{ASSETS_PATH}/image-1.png");
+    let path = &format!("{ASSETS_PATH}/cloud_city.png");
     let image = Image::from_path(path);
-    let upscaler = OpenCVUpscaler::new(IMAGE_SCALING_FACTOR)?;
+    let mut upscaler = OpenCVUpscaler::new(IMAGE_SCALING_FACTOR)?;
     let scaled_image = upscaler.upscale(image)?;
     scaled_image.save(&format!("{ASSETS_PATH}/image-1-scaled.png"))?;
 

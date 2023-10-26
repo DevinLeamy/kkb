@@ -1,4 +1,7 @@
-use std::{fs::File, io::Write};
+use std::{
+    fs::{self, File},
+    io::Write,
+};
 
 use crate::prelude::*;
 
@@ -12,17 +15,22 @@ impl Image {
     }
 
     pub fn from_path(path: impl Into<PathBuf>) -> Self {
-        todo!()
+        let image_bytes = fs::read(path.into()).expect("Failed to read the image file");
+        let base64 = base64::encode(&image_bytes);
+        Self::from_base64(base64)
     }
 }
 
 impl Image {
     pub fn save(&self, path: impl Into<PathBuf>) -> Result<()> {
-        let image_bytes = base64::decode(&self.base64).expect("Failed to decode base64 string");
         let mut file = File::create(path.into()).expect("Failed to create file");
-        file.write_all(&image_bytes).expect("Failed save image");
+        file.write_all(&self.bytes()).expect("Failed save image");
 
         Ok(())
+    }
+
+    pub fn bytes(&self) -> Vec<u8> {
+        base64::decode(&self.base64).expect("Failed to decode base64 string")
     }
 }
 
