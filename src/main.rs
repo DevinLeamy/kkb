@@ -20,7 +20,7 @@ mod prelude {
 
 use prelude::*;
 
-const IMAGE_SCALING_FACTOR: i32 = 2;
+const IMAGE_SCALING_FACTOR: i32 = 4;
 const ASSETS_PATH: &'static str = "/Users/Devin/Desktop/Github/DevinLeamy/kkb/assets";
 
 fn main() -> Result<()> {
