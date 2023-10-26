@@ -1,4 +1,7 @@
-use std::fmt::{self, Display, Formatter};
+use std::{
+    fmt::{self, Display, Formatter},
+    process::{ExitCode, Termination},
+};
 
 pub type Result<T> = std::result::Result<T, KKBError>;
 
@@ -14,5 +17,11 @@ impl Display for KKBError {
             KKBError::GenError(msg) => write!(f, "Failed to generate an image: {}", msg),
             KKBError::Undefined(msg) => write!(f, "Error: {}", msg),
         }
+    }
+}
+
+impl Termination for KKBError {
+    fn report(self) -> ExitCode {
+        ExitCode::FAILURE
     }
 }

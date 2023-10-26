@@ -14,15 +14,32 @@ mod prelude {
     pub use crate::openai::*;
     pub use crate::parser::*;
     pub use crate::upscale::*;
+    pub use serde::*;
     pub use std::path::*;
 }
 
 use prelude::*;
 
 const IMAGE_SCALING_FACTOR: i32 = 2;
+const ASSETS_PATH: &'static str = "/Users/Devin/Desktop/Github/DevinLeamy/kkb/assets";
 
-fn main() {
+fn main() -> Result<()> {
     let args = Arguments::parse();
-    let image_gen = OpenAIImageGen::new();
-    let upscaler = OpenCVUpscaler::new(IMAGE_SCALING_FACTOR);
+    // let image_gen = OpenAIImageGen::new()?;
+    // let prompt = args.prompt.unwrap_or("Pure beauty".to_string());
+    // let image = image_gen.create_image(ImageRequest {
+    //     description: prompt.clone(),
+    //     width: 1024,
+    //     height: 1024,
+    // })?;
+    // let path = &format!("{ASSETS_PATH}/image-{prompt}.png");
+    // image.save(path)?;
+
+    let path = &format!("{ASSETS_PATH}/image-1.png");
+    let image = Image::from_path(path);
+    let upscaler = OpenCVUpscaler::new(IMAGE_SCALING_FACTOR)?;
+    let scaled_image = upscaler.upscale(image)?;
+    scaled_image.save(&format!("{ASSETS_PATH}/image-1-scaled.png"))?;
+
+    Ok(())
 }
