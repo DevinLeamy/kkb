@@ -1,9 +1,17 @@
-# KKB
+# _KKB_
 
 > ### It's just a fact: _**<ins>K</ins>ool <ins>K</ins>ids have nice <ins>B</ins>ackgrounds**_.
 
 <p align="center">
   <img src="https://github.com/DevinLeamy/kkb/assets/45083086/28f492a6-0ffe-4dcf-8c94-b80bf7abd2a9" width="300" height="300">
+</p>
+
+<p>
+  <a href="#install">Install</a> •
+  <a href="#usage">Usage</a> •
+  <a href="#options">Options</a> •
+  <a href="#tech">Tech</a> •
+  <a href="#faq">FAQ</a>
 </p>
 
 ### Install
