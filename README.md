@@ -43,7 +43,7 @@ kkb "Hercules riding a motorcycle over a rainbow, with a jetpack"
 
 ### Options
 
-- `-o <path>`: Output image to path.
+- `-o <path>`: Output image path.
 
 ### Tech
 
@@ -52,6 +52,7 @@ kkb "Hercules riding a motorcycle over a rainbow, with a jetpack"
 
 ### FAQ
 
+- _"It's taking a while, is something wrong?_". No, great craftsmanship just takes time.
 -   [Macos] Can't install OpenCV? Try `brew install opencv`.
 
     1.  You may need to [reinstall homebrew](https://github.com/Genymobile/scrcpy/issues/2128#issuecomment-958046872) if you recently updated your OS.
