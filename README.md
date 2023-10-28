@@ -20,7 +20,12 @@
 cargo install kkb
 ```
 
-Ensure you have OpenCV installed. It can be finiky - _I wish it wasn't_.
+Set `OPENAI_API_KEY` to your OpenAI API key.
+```bash
+export OPENAI_API_KEY=<key>
+```
+
+Ensure you have OpenCV installed. It can be finiky - _I wish it wasn't_. Installation instructions for each platform can be found [here](https://github.com/twistedfall/opencv-rust).
 
 ### Usage
 
