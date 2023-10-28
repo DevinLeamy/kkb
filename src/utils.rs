@@ -1,4 +1,4 @@
-use std::{path::PathBuf, env};
+use std::{env, path::PathBuf};
 
 pub fn generate_image_path<P: Into<PathBuf> + Clone>(folder: P) -> PathBuf {
     let mut image_index = 0;
