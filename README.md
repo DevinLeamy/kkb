@@ -1,9 +1,9 @@
 # KKB
 
-It's just a fact: _**<u>K</u>ool <u>K</u>ids have nice <u>B</u>ackgrounds**_.
+> ### It's just a fact: _**<ins>K</ins>ool <ins>K</ins>ids have nice <ins>B</ins>ackgrounds**_.
 
 <p align="center">
-  <img src="./assets/image.png" width="300" height="300">
+  <img src="https://github.com/DevinLeamy/kkb/assets/45083086/28f492a6-0ffe-4dcf-8c94-b80bf7abd2a9" width="300" height="300">
 </p>
 
 ### Install
@@ -30,7 +30,7 @@ kkb "Hercules riding a motorcycle over a rainbow, with a jetpack"
 
 ### Options
 
-- `-o <path>`: Output the image to a path.
+- `-o <path>`: Output image to path.
 
 ### Tech
 
