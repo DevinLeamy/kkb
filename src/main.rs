@@ -3,10 +3,9 @@ mod images;
 mod openai;
 mod parser;
 mod upscale;
+mod utils;
 
 use clap::Parser;
-use parser::Arguments;
-use upscale::*;
 
 mod prelude {
     pub use crate::error::*;
@@ -14,8 +13,9 @@ mod prelude {
     pub use crate::openai::*;
     pub use crate::parser::*;
     pub use crate::upscale::*;
+    pub use crate::utils::*;
     pub use serde::*;
-    pub use std::path::*;
+    pub use std::path::PathBuf;
 }
 
 use prelude::*;
@@ -25,21 +25,25 @@ const ASSETS_PATH: &'static str = "/Users/Devin/Desktop/Github/DevinLeamy/kkb/as
 
 fn main() -> Result<()> {
     let args = Arguments::parse();
-    // let image_gen = OpenAIImageGen::new()?;
-    // let prompt = args.prompt.unwrap_or("Pure beauty".to_string());
-    // let image = image_gen.create_image(ImageRequest {
-    //     description: prompt.clone(),
-    //     width: 1024,
-    //     height: 1024,
-    // })?;
-    // let path = &format!("{ASSETS_PATH}/image-{prompt}.png");
-    // image.save(path)?;
+    let output_path = if let Some(path) = args.output {
+        assert!(path.ends_with(".png"));
+        path_as_absolute_path(&path)
+    } else {
+        generate_image_path(ASSETS_PATH)
+    };
+    let image_gen = OpenAIImageGen::new()?;
+    let prompt = args.prompt.unwrap_or("Tranquility".to_string());
+    let image = image_gen.create_image(ImageRequest {
+        description: prompt.clone(),
+        width: 1024,
+        height: 1024,
+    })?;
 
-    let path = &format!("{ASSETS_PATH}/cloud_city.png");
-    let image = Image::from_path(path);
     let mut upscaler = OpenCVUpscaler::new(IMAGE_SCALING_FACTOR)?;
-    let scaled_image = upscaler.upscale(image)?;
-    scaled_image.save(&format!("{ASSETS_PATH}/image-1-scaled.png"))?;
+    let image = upscaler.upscale(image)?;
+
+    image.save(&output_path)?;
+    wallpaper::set_from_path(output_path.to_str().unwrap()).unwrap();
 
     Ok(())
 }

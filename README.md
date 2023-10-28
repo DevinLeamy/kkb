@@ -28,6 +28,10 @@ Describe your work of art.
 kkb "Hercules riding a motorcycle over a rainbow, with a jetpack"
 ```
 
+### Options
+
+- `-o <path>`: Output the image to a path.
+
 ### Tech
 
 -   Image generation: [OpenAI's DALL-E 3](https://openai.com/dall-e-3)
