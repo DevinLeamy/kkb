@@ -8,6 +8,7 @@ readme = "README.md"
 keywords = ["images", "dall-e", "wallpaper"]
 categories = ["command-line-utilities"]
 repository = "https://github.com/DevinLeamy/kkb"
+license = "MIT"
 
 [dependencies]
 base64 = "0.21.5"
