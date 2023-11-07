@@ -21,6 +21,7 @@ cargo install kkb
 ```
 
 Set `OPENAI_API_KEY` to your OpenAI API key.
+
 ```bash
 export OPENAI_API_KEY=<key>
 ```
@@ -39,9 +40,11 @@ Describe your work of art.
 kkb "Hercules riding a motorcycle over a rainbow, with a jetpack"
 ```
 
+And, as if by magic, watch your desktop become a thing of beauty.
+
 ### Options
 
-- `-o <path>`: Output image path.
+-   `-o <path>`: Output image path.
 
 ### Tech
 
@@ -49,4 +52,7 @@ kkb "Hercules riding a motorcycle over a rainbow, with a jetpack"
 
 ### FAQ
 
-- _"It's taking a while, is something wrong?_". No, great craftsmanship just takes time.
+-   _"It's taking a while, is something wrong?_".
+    -   No, great craftsmanship just takes time.
+-   _"How much does it cost?"_
+    -   [$0.12/image](https://openai.com/pricing). Images are DALL-E 3 1024x1792 HD. A small price for great beauty :)
