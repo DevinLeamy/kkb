@@ -1,6 +1,6 @@
 [package]
 name = "kkb"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2021"
 author = ["Devin Leamy devinleamy@gmail.com"]
 description = "Generate beautiful custom desktop images with DALL-E 3"
