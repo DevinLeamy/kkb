@@ -18,7 +18,7 @@ mod prelude {
 
 use prelude::*;
 
-const DEFAULT_PROMPT: &'static str = "A beautiful desktop image. Ultra realistic.";
+const DEFAULT_PROMPT: &'static str = "A beautiful computer desktop image. Ultra realistic.";
 
 fn main() -> Result<()> {
     let args = Arguments::parse();

@@ -34,7 +34,7 @@ Make your background beautiful.
 kkb
 ```
 
-Describe your work of art.
+Or, describe your work of art.
 
 ```bash
 kkb "Hercules riding a motorcycle over a rainbow, with a jetpack"
@@ -55,4 +55,4 @@ And, as if by magic, watch your desktop become a thing of beauty.
 -   _"It's taking a while, is something wrong?_".
     -   No, great craftsmanship just takes time.
 -   _"How much does it cost?"_
-    -   [$0.12/image](https://openai.com/pricing). Images are DALL-E 3 1024x1792 HD. A small price for great beauty :)
+    -   [$0.12/image](https://openai.com/pricing). Images are DALL-E 3 1792x1024 HD. A small price for great beauty :)
