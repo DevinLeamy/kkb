@@ -1,17 +1,16 @@
-use std::{env, path::PathBuf};
+use std::{env, fs, path::PathBuf};
 
-pub fn generate_image_path<P: Into<PathBuf> + Clone>(folder: P) -> PathBuf {
-    let mut image_index = 0;
-    loop {
-        let path = folder
-            .clone()
-            .into()
-            .join(format!("kkb-image-{image_index}.png"));
-        if !path.exists() {
-            return path;
-        }
-        image_index += 1;
-    }
+use directories_next::ProjectDirs;
+use uuid::Uuid;
+
+pub fn generate_image_path() -> PathBuf {
+    let proj_dirs = ProjectDirs::from("", "", "kkb").unwrap();
+    let image_dir = proj_dirs.data_local_dir().join("images");
+    fs::create_dir_all(&image_dir).ok().unwrap();
+    let unique_file_name = format!("image-{}.png", Uuid::new_v4());
+    let unique_path = image_dir.join(unique_file_name);
+
+    unique_path
 }
 
 pub fn path_as_absolute_path<P: Into<PathBuf>>(path: P) -> PathBuf {
