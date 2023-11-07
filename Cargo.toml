@@ -2,6 +2,12 @@
 name = "kkb"
 version = "0.1.0"
 edition = "2021"
+author = ["Devin Leamy devinleamy@gmail.com"]
+description = "Generate beautiful custom desktop images with DALL-E 3"
+readme = "README.md"
+keywords = ["images", "dall-e", "wallpaper"]
+categories = ["command-line-utilities"]
+repository = "https://github.com/DevinLeamy/kkb"
 
 [dependencies]
 base64 = "0.21.5"
