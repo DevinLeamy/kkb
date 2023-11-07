@@ -2,7 +2,6 @@ mod error;
 mod images;
 mod openai;
 mod parser;
-mod upscale;
 mod utils;
 
 use clap::Parser;
@@ -12,16 +11,12 @@ mod prelude {
     pub use crate::images::*;
     pub use crate::openai::*;
     pub use crate::parser::*;
-    pub use crate::upscale::*;
     pub use crate::utils::*;
     pub use serde::*;
     pub use std::path::PathBuf;
 }
 
 use prelude::*;
-
-const IMAGE_SCALING_FACTOR: i32 = 4;
-const ASSETS_PATH: &'static str = "/Users/Devin/Desktop/Github/DevinLeamy/kkb/assets";
 
 fn main() -> Result<()> {
     let args = Arguments::parse();
@@ -39,9 +34,6 @@ fn main() -> Result<()> {
         width: 1792,
         height: 1024,
     })?;
-
-    // let mut upscaler = OpenCVUpscaler::new(IMAGE_SCALING_FACTOR)?;
-    // let image = upscaler.upscale(image)?;
 
     image.save(&output_path)?;
     println!("🎆 Saved image to ${:?}", output_path);

@@ -25,8 +25,6 @@ Set `OPENAI_API_KEY` to your OpenAI API key.
 export OPENAI_API_KEY=<key>
 ```
 
-Ensure you have OpenCV installed. It can be finiky - _I wish it wasn't_. Installation instructions for each platform can be found [here](https://github.com/twistedfall/opencv-rust).
-
 ### Usage
 
 Make your background beautiful.
@@ -48,16 +46,7 @@ kkb "Hercules riding a motorcycle over a rainbow, with a jetpack"
 ### Tech
 
 -   Image generation: [OpenAI's DALL-E 3](https://openai.com/dall-e-3)
--   Image super resolution: [OpenCV](https://github.com/twistedfall/opencv-rust)
 
 ### FAQ
 
 - _"It's taking a while, is something wrong?_". No, great craftsmanship just takes time.
--   [Macos] Can't install OpenCV? Try `brew install opencv`.
-
-    1.  You may need to [reinstall homebrew](https://github.com/Genymobile/scrcpy/issues/2128#issuecomment-958046872) if you recently updated your OS.
-    2.  You may need to set this library path:
-
-    ```bash
-    export DYLD_FALLBACK_LIBRARY_PATH="$(xcode-select --print-path)/Toolchains/XcodeDefault.xctoolchain/usr/lib/"
-    ```

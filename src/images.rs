@@ -13,12 +13,6 @@ impl Image {
     pub fn from_base64(base64: String) -> Self {
         Self { base64 }
     }
-
-    pub fn from_path(path: impl Into<PathBuf>) -> Self {
-        let image_bytes = fs::read(path.into()).expect("Failed to read the image file");
-        let base64 = base64::encode(&image_bytes);
-        Self::from_base64(base64)
-    }
 }
 
 impl Image {
