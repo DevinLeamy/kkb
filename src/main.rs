@@ -35,12 +35,12 @@ fn main() -> Result<()> {
     let prompt = args.prompt.unwrap_or("Tranquility".to_string());
     let image = image_gen.create_image(ImageRequest {
         description: prompt.clone(),
-        width: 1024,
+        width: 1792,
         height: 1024,
     })?;
 
-    let mut upscaler = OpenCVUpscaler::new(IMAGE_SCALING_FACTOR)?;
-    let image = upscaler.upscale(image)?;
+    // let mut upscaler = OpenCVUpscaler::new(IMAGE_SCALING_FACTOR)?;
+    // let image = upscaler.upscale(image)?;
 
     image.save(&output_path)?;
     wallpaper::set_from_path(output_path.to_str().unwrap()).unwrap();

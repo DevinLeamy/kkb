@@ -27,10 +27,10 @@ pub struct OpenCVUpscaler {
 impl OpenCVUpscaler {
     pub fn new(scale: i32) -> Result<Self> {
         let mut upscaler = DnnSuperResImpl::new(OPENCV_UPSCALING_MODEL, scale).unwrap();
-        // upscaler.read_model(EDSR_MODEL_PATH).unwrap();
-        // upscaler.set_model("edsr", scale).unwrap();
-        upscaler.read_model(ESPCN_MODEL_PATH).unwrap();
-        upscaler.set_model("espcn", scale).unwrap();
+        upscaler.read_model(EDSR_MODEL_PATH).unwrap();
+        upscaler.set_model("edsr", scale).unwrap();
+        // upscaler.read_model(ESPCN_MODEL_PATH).unwrap();
+        // upscaler.set_model("espcn", scale).unwrap();
 
         Ok(Self { upscaler, scale })
     }

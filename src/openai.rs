@@ -30,10 +30,14 @@ impl ImageGenerator for OpenAIImageGen {
     fn create_image(&self, request: ImageRequest) -> Result<Image> {
         let response = ureq::post(OPENAI_IMAGE_GEN_URL)
             .set("Authorization", &format!("Bearer {}", self.key))
+            .set("Content-Type", "application/json")
             .send_json(ureq::json!({
                 "prompt": request.description,
                 "response_format": "b64_json",
-                "size": "1024x1024"
+                "size": format!("{}x{}", request.width, request.height),
+                "model": "dall-e-3",
+                "n": 1,
+                "quality": "hd"
             }))
             .unwrap()
             .into_string()
