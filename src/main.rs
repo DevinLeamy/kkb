@@ -18,6 +18,8 @@ mod prelude {
 
 use prelude::*;
 
+const DEFAULT_PROMPT: &'static str = "A beautiful desktop image. Ultra realistic.";
+
 fn main() -> Result<()> {
     let args = Arguments::parse();
     let output_path = if let Some(path) = args.output {
@@ -28,7 +30,7 @@ fn main() -> Result<()> {
     };
     println!("🌀 Generating...");
     let image_gen = OpenAIImageGen::new()?;
-    let prompt = args.prompt.unwrap_or("Tranquility".to_string());
+    let prompt = args.prompt.unwrap_or(DEFAULT_PROMPT.into());
     let image = image_gen.create_image(ImageRequest {
         description: prompt.clone(),
         width: 1792,
