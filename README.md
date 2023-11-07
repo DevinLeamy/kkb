@@ -1,9 +1,10 @@
 # _KKB_
+[![crates.io](https://img.shields.io/crates/v/kkb.svg)](https://crates.io/crates/kkb)
 
 > ### It's just a fact: _**<ins>K</ins>ool <ins>K</ins>ids have nice <ins>B</ins>ackgrounds**_.
 
 <p align="center">
-  <img src="https://github.com/DevinLeamy/kkb/assets/45083086/28f492a6-0ffe-4dcf-8c94-b80bf7abd2a9" width="300" height="300">
+  <img src="https://github.com/DevinLeamy/kkb/assets/45083086/026e5b7a-3fe9-4cc0-b625-8af9baaba515" width="300" height="300">
 </p>
 
 <p>
